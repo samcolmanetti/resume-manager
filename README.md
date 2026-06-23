@@ -2,10 +2,16 @@
 
 ![Resume preview](docs/preview.png)
 
-A code-based LaTeX resume system where content lives in plain `.tex` files and all
-formatting lives in `resume.cls`. One command builds a polished, ATS-friendly,
-single-page PDF. Includes AI agent skills for editing, tailoring, and optimizing
-your resume directly from Claude Code or any compatible agent.
+A code-based LaTeX resume system. Content lives in plain `.tex` files, formatting
+lives in `resume.cls`, and one command builds a polished, ATS-friendly, single-page PDF.
+
+**Why keep your resume in code:**
+
+- **Version control.** Track every change, revert anything, see exactly what you edited and when.
+- **AI-native.** Agents can read, edit, and reason about plain text. PDFs are opaque blobs.
+- **Tailored versions.** Branch or duplicate for each job posting, diff what changed, merge improvements back.
+- **Separation of concerns.** Content and formatting are independent. Tweak spacing or fonts in one place without touching your content.
+- **Automation.** Skills for bullet rewriting, ATS optimization, job match scoring, and more run directly in your editor.
 
 ## AI agents
 
