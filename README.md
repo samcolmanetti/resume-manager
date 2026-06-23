@@ -8,12 +8,13 @@ ATS-friendly, single-page PDF.
 
 ## Prerequisites
 
-- **xelatex**: ships with [MacTeX](https://tug.org/mactex/) or BasicTeX
-- **Charter** system font: ships with macOS (required by `resume.cls`)
-- **pdftotext**: optional, for quality checks (ships with MacTeX)
+- **xelatex**: ships with BasicTeX (all required packages are included, no `tlmgr` installs needed)
+- **Charter** system font: ships with macOS
+- **pdftotext**: optional, for quality checks
 
 ```bash
-brew install --cask mactex   # full install (~4 GB); use basictex for a smaller footprint
+brew install --cask basictex   # ~100 MB
+brew install poppler           # optional: adds pdftotext for quality checks
 ```
 
 ## Setup
