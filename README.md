@@ -1,19 +1,29 @@
-# Resume Manager
+<h1 align="center">Resume Manager</h1>
+
+<p align="center"><em>Your resume in code. Version-controlled, AI-native, one command to PDF.</em></p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/engine-xelatex-blue" alt="xelatex">
+  <img src="https://img.shields.io/badge/output-single--page%20PDF-brightgreen" alt="PDF">
+  <img src="https://img.shields.io/badge/AI-Claude%20Code-8957e5" alt="Claude Code">
+  <img src="https://img.shields.io/badge/license-MIT-3da639" alt="MIT">
+</p>
+
+---
 
 ![Resume preview](docs/preview.png)
 
-A code-based LaTeX resume system. Content lives in plain `.tex` files, formatting
-lives in `resume.cls`, and one command builds a polished, ATS-friendly, single-page PDF.
+Content lives in plain `.tex` files, formatting lives in `resume.cls`, and one command builds a polished, ATS-friendly, single-page PDF.
 
-**Why keep your resume in code:**
+## Why keep your resume in code
 
-- **Version control.** Track every change, revert anything, see exactly what you edited and when.
-- **AI-native.** Agents can read, edit, and reason about plain text. PDFs are opaque blobs.
-- **Tailored versions.** Branch or duplicate for each job posting, diff what changed, merge improvements back.
-- **Separation of concerns.** Content and formatting are independent. Tweak spacing or fonts in one place without touching your content.
-- **Automation.** Skills for bullet rewriting, ATS optimization, job match scoring, and more run directly in your editor.
+- 🗂 **Version control.** Track every change, revert anything, see exactly what you edited and when.
+- 🤖 **AI-native.** Agents can read, edit, and reason about plain text. PDFs are opaque blobs.
+- 🎯 **Tailored versions.** Branch or duplicate for each job posting, diff what changed, merge improvements back.
+- 🎨 **Separation of concerns.** Content and formatting are independent. Tweak spacing in one place without touching your content.
+- ⚡ **Automation.** Skills for bullet rewriting, ATS optimization, and job match scoring run directly in your editor.
 
-## AI agents
+## 🤖 AI agents
 
 This repo includes skills for agents in `.claude/skills/` or `.agents/skills/`. Ask natural questions, or invoke a skill directly.
 
@@ -34,9 +44,9 @@ This repo includes skills for agents in `.claude/skills/` or `.agents/skills/`. 
 - `/job-description-analyzer [posting]`: score your resume against a job description, identify gaps
 - `/resume-ats-optimizer`: check ATS compatibility and keyword match
 
-## Prerequisites
+## 🛠 Prerequisites
 
-- **xelatex**: ships with BasicTeX (all required packages are included, no `tlmgr` installs needed)
+- **xelatex**: ships with BasicTeX (all required packages included, no `tlmgr` installs needed)
 - **Charter** system font: ships with macOS
 - **pdftotext**: optional, for quality checks
 
@@ -45,7 +55,7 @@ brew install --cask basictex   # ~100 MB
 brew install poppler           # optional: adds pdftotext for quality checks
 ```
 
-## Setup
+## 🚀 Setup
 
 ```bash
 git clone https://github.com/samcolmanetti/resume-manager
@@ -57,7 +67,7 @@ make
 open resumes/resume-yourname.pdf
 ```
 
-`PDFs go under resumes/` by default (gitignored). 
+`resumes/` is gitignored.
 
 To export a finished PDF to Google Drive, Dropbox, or any folder on your machine,
 copy `config.local.mk.example` to `config.local.mk` and set:
@@ -67,14 +77,14 @@ copy `config.local.mk.example` to `config.local.mk` and set:
 
 Then `make export FILE=resume-yourname` builds and drops the PDF there.
 
-## Build
+## ⚙️ Build
 
 ```bash
 make                          # build all resumes/resume-*.tex -> resumes/
 make resumes/resume-NAME.pdf  # build one file
 ```
 
-## Macros
+## 📐 Macros
 
 Content files use only these macros (all formatting stays in `resume.cls`):
 
@@ -92,7 +102,7 @@ Content files use only these macros (all formatting stays in `resume.cls`):
 
 Never put spacing or font commands in a content file. Change `resume.cls` instead.
 
-## House rules
+## 📏 House rules
 
 - **One page.** Confirm the build log says `(1 page)` after every edit.
 - **No em dashes** (`—`). Use commas, semicolons, or restructure.
