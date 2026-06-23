@@ -12,6 +12,10 @@ ATS-friendly, single-page PDF.
 - **Charter** system font: ships with macOS (required by `resume.cls`)
 - **pdftotext**: optional, for quality checks (ships with MacTeX)
 
+```bash
+brew install --cask mactex   # full install (~4 GB); use basictex for a smaller footprint
+```
+
 ## Setup
 
 ```bash
