@@ -22,16 +22,16 @@ make
 open build/resume-yourname.pdf
 ```
 
-`resumes/` and `build/` are gitignored. Your content never lands in this repo.
+`resumes/` is gitignored. Your content and built PDFs never land in this repo.
 
 ## Build
 
 ```bash
-make                           # build all resumes/resume-*.tex -> build/
-make build/resume-NAME.pdf     # build one file
-make check                     # verify no resume content is tracked
-make clean                     # remove build output
-make export FILE=resume-NAME   # copy PDF to EXPORT_DIR (see config.local.mk)
+make                              # build all resumes/resume-*.tex -> resumes/
+make resumes/resume-NAME.pdf     # build one file
+make check                        # verify no resume content is tracked
+make clean                        # remove build output
+make export FILE=resume-NAME      # copy PDF to EXPORT_DIR (see config.local.mk)
 ```
 
 Export config: `cp config.local.mk.example config.local.mk` and set `EXPORT_DIR`.

@@ -1,8 +1,7 @@
 # Resume content (your .tex files live here, never tracked)
 resumes/
 
-# Build output
-build/
+# Build aux (LaTeX intermediate files)
 .build-aux/
 
 # Per-user export config (copy config.local.mk.example -> config.local.mk)
