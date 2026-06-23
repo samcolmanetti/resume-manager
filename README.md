@@ -4,49 +4,33 @@ A code-based LaTeX resume system. Content lives in plain `.tex` files using a sm
 of semantic macros; all formatting lives in `resume.cls`. One command builds a polished,
 ATS-friendly, single-page PDF.
 
-**This repo is the public engine.** Your real resume content lives in a separate private
-repo, cloned into `resumes/` (gitignored). The two repos meet only at build time.
-
-```
-resume-manager/  (public)          your-resume-content/  (private)
-  resume.cls        engine                resume-jane.tex
-  Makefile          build          ──►    resume-jane-2026.tex
-  resumes/          gitignored ◄── clone ─┘
-  build/            gitignored (output PDFs)
-```
-
 ## Prerequisites
 
 - **xelatex** — ships with [MacTeX](https://tug.org/mactex/) or BasicTeX
 - **Charter** system font — ships with macOS (required by `resume.cls`)
 - **pdftotext** — optional, for quality checks (ships with MacTeX)
 
-## Quick start
+## Setup
 
 ```bash
-git clone <resume-manager>
+git clone <this-repo>
 cd resume-manager
-git clone <your-private-content-repo> resumes
+mkdir resumes
+cp resume-template.tex resumes/resume-yourname.tex
+# edit resumes/resume-yourname.tex
 make
 open build/resume-yourname.pdf
 ```
 
-Starting fresh with no private repo yet:
-
-```bash
-mkdir resumes && (cd resumes && git init)
-cp resume-template.tex resumes/resume-yourname.tex
-# edit with your content
-make
-```
+`resumes/` and `build/` are gitignored. Your content never lands in this repo.
 
 ## Build
 
 ```bash
-make                           # build all resumes/resume-*.tex
+make                           # build all resumes/resume-*.tex -> build/
 make build/resume-NAME.pdf     # build one file
-make check                     # verify no private content is tracked
-make clean                     # remove build artifacts
+make check                     # verify no resume content is tracked
+make clean                     # remove build output
 make export FILE=resume-NAME   # copy PDF to EXPORT_DIR (see config.local.mk)
 ```
 
@@ -76,9 +60,3 @@ Never put spacing or font commands in a content file. Change `resume.cls` instea
 - **No em dashes** (`—`). Use commas, semicolons, or restructure.
 - **No orphan lines.** No bullet wraps to a trailing line of 1-2 words.
 - **ATS-friendly.** Single column, selectable text, standard font, no text in graphics.
-
-## Claude Code integration
-
-Skills in `.claude/skills/` power a `/resume` workflow that handles the edit/verify
-loop and enforces the house rules above. See `AGENTS.md` in the `resumes/` content
-repo for context on building and exporting.

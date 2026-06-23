@@ -1,20 +1,14 @@
-# Private resume content lives here as a separate (private) git repo clone.
-# It must NEVER be tracked by this public repo.
+# Resume content (your .tex files live here, never tracked)
 resumes/
 
-# Build output (generated PDFs and LaTeX artifacts)
+# Build output
 build/
-*.aux
-*.log
-*.out
-*.fls
-*.fdb_latexmk
-*.synctex.gz
+.build-aux/
 
 # Per-user export config (copy config.local.mk.example -> config.local.mk)
 config.local.mk
 
-# Local agent/tooling run state (e.g. compound-engineering review artifacts)
+# Local agent/tooling run state
 .context/
 
 .DS_Store
