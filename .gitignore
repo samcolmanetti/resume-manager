@@ -18,3 +18,6 @@ config.local.mk
 .context/
 
 .DS_Store
+
+# Skills installer lock (local tooling state, not committed)
+skills-lock.json
