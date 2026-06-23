@@ -1,5 +1,7 @@
 # resume-manager
 
+![Resume preview](docs/preview.png)
+
 A code-based LaTeX resume system. Content lives in plain `.tex` files using a small set
 of semantic macros; all formatting lives in `resume.cls`. One command builds a polished,
 ATS-friendly, single-page PDF.
