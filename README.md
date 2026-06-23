@@ -21,10 +21,18 @@ mkdir resumes
 cp resume-template.tex resumes/resume-yourname.tex
 # edit resumes/resume-yourname.tex
 make
-open build/resume-yourname.pdf
+open resumes/resume-yourname.pdf
 ```
 
-`resumes/` is gitignored. Your content and built PDFs never land in this repo.
+`resumes/` is gitignored - your content and built PDFs never land in this repo.
+
+To export a finished PDF to Google Drive, Dropbox, or any folder on your machine,
+copy `config.local.mk.example` to `config.local.mk` (also gitignored) and set:
+
+- `EXPORT_DIR` - destination folder (e.g. `~/Library/CloudStorage/GoogleDrive-.../Resumes/Current`)
+- `EXPORT_NAME` - filename for the exported copy (e.g. `Sam Colmanetti Resume 2026.pdf`)
+
+Then `make export FILE=resume-yourname` builds and drops the PDF there.
 
 ## Build
 
@@ -35,8 +43,6 @@ make check                        # verify no resume content is tracked
 make clean                        # remove build output
 make export FILE=resume-NAME      # copy PDF to EXPORT_DIR (see config.local.mk)
 ```
-
-Export config: `cp config.local.mk.example config.local.mk` and set `EXPORT_DIR`.
 
 ## Macros
 
