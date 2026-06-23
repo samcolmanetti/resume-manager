@@ -1,0 +1,51 @@
+%% resume-template.tex — starter template for a new user.
+%% Copy to resume-YOURNAME.tex and replace the placeholder text.
+%% Build: make   (or: xelatex -output-directory=build resume-YOURNAME.tex)
+\documentclass{resume}
+
+\hypersetup{pdftitle={Your Name Resume}, pdfauthor={Your Name}}
+
+\begin{document}
+
+% ---- Header ---------------------------------------------------------------
+\name{Your Name}
+% \location{City, ST}          % optional: centered line under your name
+\contact{%
+  \href{mailto:you@example.com}{you@example.com}\sep
+  (555) 555-1234\sep
+  \href{https://linkedin.com/in/yourhandle}{linkedin.com/in/yourhandle}\sep
+  \href{https://github.com/yourhandle}{github.com/yourhandle}%
+}
+
+% ---- Education ------------------------------------------------------------
+\section{Education}
+\edu{University Name, B.S.\ Your Major}{City, ST}
+    {GPA: X.XX}{Month YYYY}
+
+% ---- Skills ---------------------------------------------------------------
+\section{Technical Skills}
+\skill{Languages}{Python, Java, SQL, JavaScript}
+\skill{Tools}{Git, Docker, Kubernetes}
+
+% ---- Experience -----------------------------------------------------------
+\section{Work Experience}
+
+\entry{Role, Company, City, ST}{Month YYYY -- Month YYYY}
+\begin{bullets}
+  \item Accomplished X by doing Y, resulting in Z.
+  \item Led initiative that improved metric by N\%.
+\end{bullets}
+
+% ---- Projects (optional) --------------------------------------------------
+% \section{Projects}
+%
+% \entry{Project Name}{Month YYYY -- Month YYYY}
+% \begin{bullets}
+%   \item Built X using Y; achieved Z.
+% \end{bullets}
+
+% ---- One-liners (awards, publications, etc.) ------------------------------
+% \section{Honors}
+% \oneline{Award Name, Granting Body}{YYYY}
+
+\end{document}

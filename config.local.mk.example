@@ -1,0 +1,12 @@
+# Per-user export config. Copy this file to config.local.mk (gitignored) and
+# fill in the values for your machine. Then: make export FILE=resume-yourname
+#
+# EXPORT_DIR   — the folder to copy the PDF to (e.g. a Google Drive folder)
+# EXPORT_NAME  — the filename for the exported PDF
+
+# Google Drive example (macOS):
+# EXPORT_DIR  = $(HOME)/Library/CloudStorage/GoogleDrive-you@gmail.com/My Drive/Documents/Resumes/Current
+# EXPORT_NAME = Your Name Resume 2026.pdf
+
+EXPORT_DIR  = /path/to/your/export/folder
+EXPORT_NAME = Your Name Resume.pdf
