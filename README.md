@@ -51,7 +51,7 @@ make
 open resumes/resume-yourname.pdf
 ```
 
-`resumes/` is gitignored.
+`PDFs go under resumes/` by default (gitignored). 
 
 To export a finished PDF to Google Drive, Dropbox, or any folder on your machine,
 copy `config.local.mk.example` to `config.local.mk` and set:
