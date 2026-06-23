@@ -8,9 +8,9 @@ ATS-friendly, single-page PDF.
 
 ## Prerequisites
 
-- **xelatex** — ships with [MacTeX](https://tug.org/mactex/) or BasicTeX
-- **Charter** system font — ships with macOS (required by `resume.cls`)
-- **pdftotext** — optional, for quality checks (ships with MacTeX)
+- **xelatex**: ships with [MacTeX](https://tug.org/mactex/) or BasicTeX
+- **Charter** system font: ships with macOS (required by `resume.cls`)
+- **pdftotext**: optional, for quality checks (ships with MacTeX)
 
 ## Setup
 
@@ -61,24 +61,24 @@ Never put spacing or font commands in a content file. Change `resume.cls` instea
 
 ## AI agents
 
-This repo ships [Claude Code](https://claude.ai/code) skills in `.claude/skills/`. Open
-the project in Claude Code and ask naturally, or invoke a skill directly with `/skill-name`.
+This repo includes skills for agents in `.claude/skills/` or `.agents/skills/`. Ask natural questions, or invoke a skill directly.
 
 **Getting started**
-- `/new-user` — scaffold a new resume from the template, replace placeholders, verify it builds
-- `/resume` — make content edits and verify against acceptance criteria (one page, no em dashes, no orphans)
+
+- `/new-user`: scaffold a new resume from the template, replace placeholders, verify it builds
+- `/resume`: make content edits and verify against acceptance criteria (one page, no em dashes, no orphans)
 
 **Improving content**
-- `/resume-bullet-writer` — rewrite weak bullets as achievement-focused statements with impact
-- `/resume-quantifier` — find opportunities to add metrics; estimates where exact data is unavailable
-- `/resume-tailor [job posting]` — customize the resume for a specific role without inventing facts
-- `/tech-resume-optimizer` — optimize framing for software engineering and technical roles
+
+- `/resume-bullet-writer`: rewrite weak bullets as achievement-focused statements with impact
+- `/resume-quantifier`: find opportunities to add metrics; estimates where exact data is unavailable
+- `/resume-tailor [job posting]`: customize the resume for a specific role without inventing facts
+- `/tech-resume-optimizer`: optimize framing for software engineering and technical roles
 
 **Job search**
-- `/job-description-analyzer [posting]` — score your resume against a job description, identify gaps
-- `/resume-ats-optimizer` — check ATS compatibility and keyword match
 
-Other agents (Codex, Gemini, etc.) can use the same skills via the `.agents/skills/` directory.
+- `/job-description-analyzer [posting]`: score your resume against a job description, identify gaps
+- `/resume-ats-optimizer`: check ATS compatibility and keyword match
 
 ## House rules
 
