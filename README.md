@@ -15,7 +15,7 @@ ATS-friendly, single-page PDF.
 ## Setup
 
 ```bash
-git clone <this-repo>
+git clone https://github.com/samcolmanetti/resume-manager
 cd resume-manager
 mkdir resumes
 cp resume-template.tex resumes/resume-yourname.tex
@@ -24,12 +24,12 @@ make
 open resumes/resume-yourname.pdf
 ```
 
-`resumes/` is gitignored - your content and built PDFs never land in this repo.
+`resumes/` is gitignored.
 
 To export a finished PDF to Google Drive, Dropbox, or any folder on your machine,
-copy `config.local.mk.example` to `config.local.mk` (also gitignored) and set:
+copy `config.local.mk.example` to `config.local.mk` and set:
 
-- `EXPORT_DIR` - destination folder (e.g. `~/Library/CloudStorage/GoogleDrive-.../Resumes/Current`)
+- `EXPORT_DIR` - destination folder (e.g. `~/GoogleDrive/Resumes/Current`)
 - `EXPORT_NAME` - filename for the exported copy (e.g. `Sam Colmanetti Resume 2026.pdf`)
 
 Then `make export FILE=resume-yourname` builds and drops the PDF there.
@@ -37,11 +37,8 @@ Then `make export FILE=resume-yourname` builds and drops the PDF there.
 ## Build
 
 ```bash
-make                              # build all resumes/resume-*.tex -> resumes/
-make resumes/resume-NAME.pdf     # build one file
-make check                        # verify no resume content is tracked
-make clean                        # remove build output
-make export FILE=resume-NAME      # copy PDF to EXPORT_DIR (see config.local.mk)
+make                          # build all resumes/resume-*.tex -> resumes/
+make resumes/resume-NAME.pdf  # build one file
 ```
 
 ## Macros
