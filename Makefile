@@ -3,6 +3,7 @@ ENGINE  := xelatex
 SRCDIR  := resumes
 AUXDIR  := .build-aux
 
+
 # Glob all resume source files
 SOURCES := $(wildcard $(SRCDIR)/resume-*.tex)
 PDFS    := $(patsubst %.tex,%.pdf,$(SOURCES))
@@ -45,11 +46,15 @@ endif
 
 # Build to .build-aux/ (aux junk stays there), then copy the PDF next to the source.
 # Runs xelatex from the repo root so \documentclass{resume} resolves resume.cls.
+GREEN := $(shell tput setaf 2 2>/dev/null)
+RED   := $(shell tput setaf 1 2>/dev/null)
+RESET := $(shell tput sgr0 2>/dev/null)
+
 $(SRCDIR)/%.pdf: $(SRCDIR)/%.tex resume.cls | $(AUXDIR)
 	@$(ENGINE) -interaction=nonstopmode -halt-on-error -output-directory=$(AUXDIR) $< > $(AUXDIR)/$*.log 2>&1 \
-		|| (echo "BUILD FAILED: see $(AUXDIR)/$*.log" && tail -n 20 $(AUXDIR)/$*.log && exit 1)
+		|| { printf "$(RED)✗$(RESET) $@\n"; tail -n 20 $(AUXDIR)/$*.log; exit 1; }
 	@cp $(AUXDIR)/$*.pdf $@
-	@echo "Built $@: $$(grep -oE '\([0-9]+ pages?\)' $(AUXDIR)/$*.log | tail -1)"
+	@printf "$(GREEN)✓$(RESET) $@ $$(grep -oE '\([0-9]+ pages?\)' $(AUXDIR)/$*.log | tail -1)\n"
 
 $(AUXDIR):
 	mkdir -p $@
