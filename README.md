@@ -1,10 +1,32 @@
-# resume-manager
+# Resume Manager
 
 ![Resume preview](docs/preview.png)
 
-A code-based LaTeX resume system. Content lives in plain `.tex` files using a small set
-of semantic macros; all formatting lives in `resume.cls`. One command builds a polished,
-ATS-friendly, single-page PDF.
+A code-based LaTeX resume system where content lives in plain `.tex` files and all
+formatting lives in `resume.cls`. One command builds a polished, ATS-friendly,
+single-page PDF. Includes AI agent skills for editing, tailoring, and optimizing
+your resume directly from Claude Code or any compatible agent.
+
+## AI agents
+
+This repo includes skills for agents in `.claude/skills/` or `.agents/skills/`. Ask natural questions, or invoke a skill directly.
+
+**Getting started**
+
+- `/new-user`: scaffold a new resume from the template, replace placeholders, verify it builds
+- `/resume`: make content edits and verify against acceptance criteria (one page, no em dashes, no orphans)
+
+**Improving content**
+
+- `/resume-bullet-writer`: rewrite weak bullets as achievement-focused statements with impact
+- `/resume-quantifier`: find opportunities to add metrics; estimates where exact data is unavailable
+- `/resume-tailor [job posting]`: customize the resume for a specific role without inventing facts
+- `/tech-resume-optimizer`: optimize framing for software engineering and technical roles
+
+**Job search**
+
+- `/job-description-analyzer [posting]`: score your resume against a job description, identify gaps
+- `/resume-ats-optimizer`: check ATS compatibility and keyword match
 
 ## Prerequisites
 
@@ -63,27 +85,6 @@ Content files use only these macros (all formatting stays in `resume.cls`):
 | `\oneline{Left}{Right}` | One-line entry with right-aligned text |
 
 Never put spacing or font commands in a content file. Change `resume.cls` instead.
-
-## AI agents
-
-This repo includes skills for agents in `.claude/skills/` or `.agents/skills/`. Ask natural questions, or invoke a skill directly.
-
-**Getting started**
-
-- `/new-user`: scaffold a new resume from the template, replace placeholders, verify it builds
-- `/resume`: make content edits and verify against acceptance criteria (one page, no em dashes, no orphans)
-
-**Improving content**
-
-- `/resume-bullet-writer`: rewrite weak bullets as achievement-focused statements with impact
-- `/resume-quantifier`: find opportunities to add metrics; estimates where exact data is unavailable
-- `/resume-tailor [job posting]`: customize the resume for a specific role without inventing facts
-- `/tech-resume-optimizer`: optimize framing for software engineering and technical roles
-
-**Job search**
-
-- `/job-description-analyzer [posting]`: score your resume against a job description, identify gaps
-- `/resume-ats-optimizer`: check ATS compatibility and keyword match
 
 ## House rules
 
