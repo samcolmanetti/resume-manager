@@ -59,6 +59,27 @@ Content files use only these macros (all formatting stays in `resume.cls`):
 
 Never put spacing or font commands in a content file. Change `resume.cls` instead.
 
+## AI agents
+
+This repo ships [Claude Code](https://claude.ai/code) skills in `.claude/skills/`. Open
+the project in Claude Code and ask naturally, or invoke a skill directly with `/skill-name`.
+
+**Getting started**
+- `/new-user` — scaffold a new resume from the template, replace placeholders, verify it builds
+- `/resume` — make content edits and verify against acceptance criteria (one page, no em dashes, no orphans)
+
+**Improving content**
+- `/resume-bullet-writer` — rewrite weak bullets as achievement-focused statements with impact
+- `/resume-quantifier` — find opportunities to add metrics; estimates where exact data is unavailable
+- `/resume-tailor [job posting]` — customize the resume for a specific role without inventing facts
+- `/tech-resume-optimizer` — optimize framing for software engineering and technical roles
+
+**Job search**
+- `/job-description-analyzer [posting]` — score your resume against a job description, identify gaps
+- `/resume-ats-optimizer` — check ATS compatibility and keyword match
+
+Other agents (Codex, Gemini, etc.) can use the same skills via the `.agents/skills/` directory.
+
 ## House rules
 
 - **One page.** Confirm the build log says `(1 page)` after every edit.
